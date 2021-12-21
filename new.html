@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-color: green;
+			border: solid;
+			position: absolute;
+		}
+		.firsBox {
+			background-color: white;
+			background-image: url(duckl.png);
+		}
+
+		.player1 {
+			position: absolute;
+			width: 100px;
+			margin-left: 20px;
+			transition: 1s;
+		}
+
+		.player2 {
+			position: absolute;
+			width: 100px;
+			margin-left: 20px;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h4 style="margin-left: 20px">Score: <span class="score">150</span></h4>
+		<img src="dice.png" class="bt" style="width: 100px; margin-left: 20px">
+		<img src="dice.png" class="bt2" style="width: 100px; margin-left: 20px">
+		<!--первая линия-->
+		<div class="boxs" style="margin-left: 20px">
+			<h4>START</h4>
+
+		</div>
+		<div class="boxs" style="margin-left: 130px">1</div>
+		<div class="boxs" style="margin-left: 240px">2</div>
+		<div class="boxs" style="margin-left: 350px; background-color: red">3</div>
+
+		<div class="boxs" style="margin-left: 460px">4</div>
+		<div class="boxs" style="margin-left: 570px">5</div>
+		<div class="boxs" style="margin-left: 680px;  background-color: red">6</div>
+
+		<div class="boxs" style="margin-left: 790px">7</div>
+		<div class="boxs" style="margin-left: 900px">8</div>
+		<div class="boxs" style="margin-left: 1010px;background-color: red" >9</div>
+
+		<!--вторая линия-->
+		<div class="boxs" style="margin-left: 1120px;background-color: red">10
+			<p>иди назад на -5 клеток</p>
+		</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 110px">11</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 220px">12</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 330px">13</div>
+
+		<div class="boxs" style="margin-left: 1120px; margin-top: 440px">14</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 550px">15</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 660px">16</div>
+
+		<div class="boxs" style="margin-left: 1120px; margin-top: 770px">17</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 880px">18</div>
+		<div class="boxs" style="margin-left: 1120px; margin-top: 990px">19</div>
+
+		<!--третья линия-->
+		<div class="boxs" style="margin-left: 1120px; margin-top: 1100px; background: red">20</div>
+
+		<div class="boxs" style="margin-left: 1010px; margin-top: 1100px">21</div>
+		<div class="boxs" style="margin-left: 900px; margin-top: 1100px">22</div>
+		<div class="boxs" style="margin-left: 790px; margin-top: 1100px">23</div>
+
+		<div class="boxs" style="margin-left: 680px; margin-top: 1100px">24</div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 1100px">25</div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 1100px">26</div>
+
+		<div class="boxs" style="margin-left: 350px; margin-top: 1100px">27</div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 1100px">28</div>
+		<div class="boxs" style="margin-left: 130px; margin-top: 1100px">29</div>
+
+		<!--четвертая линия-->
+		<div class="boxs" style="margin-left: 20px; margin-top: 1100px; background: red">30</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 990px">31</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 880px">32</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 770px">33</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 660px">34</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 550px">35</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 440px">36</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 330px">37</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 220px"></div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 110px">41</div>
+
+
+		<!--последние дивы если утка выходит за пределы, чтобы не сломался код
+		<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		-->
+	</div>
+	<img src="duck.png" class="player1">
+	<img src="hat.png" class="player2">
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+	let duck = document.querySelector(".duck");
+	let button = document.querySelector(".bt");
+	let button2 = document.querySelector(".bt2");
+	let player1 = document.querySelector(".player1");
+	let player2 = document.querySelector(".player2");
+	let score = document.querySelector(".score");
+	let point = 150;
+	let boxes = document.querySelectorAll(".boxs");
+	//цикл по боксу if i 1 добавляется ключ
+	console.dir(score);
+
+	let checkPlayer = 1;
+
+	boxes[1].companies= {
+		name : "Розтор"
+	}; //компания это объект
+	boxes[5].result=0; //компания 2 сначала сделать так
+
+
+	//все 40 описание
+
+	let scoreController = function(arg) {
+		point = point + arg;
+		score.innerHTML = point;
+	}
+
+	let winMode = function(){
+		content = document.querySelector('.content');
+		winMode = content.style.display = "none";
+		return 'you win';
+	}
+	// можно привязать к объектк Ключ
+	let checkBox = function(arg,playerID) {
+		if(step==arg) {
+			if(boxes[arg].result==0){
+
+				let quest = confirm("купить?")
+				if(quest==true){
+					boxes[arg].result=playerID;
+					alert("поздравляю с покупкой!")
+					boxes[arg].style.background = "purple";
+				}
+			}
+		}
+	}
+
+	// таймер чтобы не сходу покупалось
+	// setTimeout(function(){
+	// 	checkBox(1,1)
+	// }, 1000);
+
+	let step = 0;
+	let step2= 0;
+	// В каждой линии 6 проверок
+
+	//массив компаний
+	button.onclick = function(){
+		if(checkPlayer==1){
+
+			let rand = Math.round(Math.random() * 5);
+			let bones = [1, 2, 3, 4, 5, 6]; //рандом без нуля
+
+			if(step=>0){
+				step = step + 1; //bones[rand]
+
+				console.log(step)
+				//console.log(bones[rand])
+
+				if(step==1) {
+					if(boxes[1].result==0){ //проверяем свободна ли коробка
+						let quest = confirm("купить?")
+						if(quest==true){ //проверяем нажал ли ок
+							boxes[1].result=1;
+							alert("поздравляю с покупкой!")
+							boxes[1].style.background = "purple";
+						}
+					} else if (boxes[1].result==2) {
+						alert("Плоти налоги")
+						point = point - 100;
+						score.innerHTML = point;
+					}
+				}
+
+				if(step==5){
+					if(boxes[5].result==0){ //проверяем свободна ли коробка
+						let quest = confirm("купить?");
+
+
+						if(quest==true){ //проверяем нажал ли ок
+							boxes[1].result=1;
+							alert("поздравляю с покупкой!")
+							boxes[1].style.background = "purple";
+						}
+					} else if (boxes[1].result==2) {
+						alert("Плоти налоги")
+						point = point - 100;
+						score.innerHTML = point;
+					}
+				}
+			}
+			if(step>39){
+				step=0;
+				console.log(step)
+				console.log("новый круг")
+			}
+
+			let leftBox = boxes[step].style.marginLeft;
+			let topBox = boxes[step].style.marginTop;
+
+			player1.style.marginLeft = leftBox;
+			player1.style.marginTop = topBox;
+
+			checkPlayer=2;
+		}
+	}
+
+
+	button2.onclick = function(){
+		if(checkPlayer==2){
+			let rand = Math.round(Math.random() * 5);
+			let bones = [1, 2, 3, 4, 5, 6]; //рандом без нуля
+
+			if(step2=>0){
+				step2 = step2 + 1; //bones[rand]
+				console.log(step2)
+				if(step2==1) {
+					if(boxes[1].result==0){ //проверяем свободна ли коробка
+						let quest = confirm("купить?")
+						if(quest==true){ //проверяем нажал ли ок
+							boxes[1].result=2;
+							alert("поздравляю с покупкой!")
+							boxes[1].style.background = "yellow";
+						}
+					} else if (boxes[1].result==1) {
+						alert("Плоти налоги")
+						point = point - 100;
+						score.innerHTML = point;
+					}
+				}
+			}
+			if(step2>39){
+				step2=0;
+				console.log(step)
+				console.log("новый круг")
+			}
+
+			let leftBox = boxes[step2].style.marginLeft;
+			let topBox = boxes[step2].style.marginTop;
+
+			player2.style.marginLeft = leftBox;
+			player2.style.marginTop = topBox;
+
+			checkPlayer=1;
+			console.log('ходит игрок 1')
+		}
+	}
+
+
+</script>
